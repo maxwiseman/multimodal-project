@@ -8,15 +8,23 @@ export const sources = [
   { id: 'alignment', author: 'Anthropic & Redwood Research', title: 'Alignment faking in large language models', date: '18 Dec. 2024', url: 'https://www.anthropic.com/research/alignment-faking', note: 'Experimental evidence of alignment faking, including the study’s setup and limitations.', category: 'Alignment' },
 ];
 
-export const examples = [
-  { name: 'Mobility', title: 'More independence.', paragraph: 4, image: '/images/freedom-ride.webp', alt: 'Imagined passenger watching the coast from an autonomous vehicle', caption: 'Imagined scene · not a depiction of Zoox or Cybercab', today: 'Driverless rides operate in limited service areas.', possibility: 'More independence, and attention freed during a journey.' },
-  { name: 'Medicine', title: 'More time together.', paragraph: 5, image: '/images/molecules.webp', alt: 'Conceptual molecular structures, not a medical image', caption: 'Conceptual biology · not a medical image', today: 'Personalized therapeutic cancer vaccines are being tested.', possibility: 'Treatments tailored to a tumor—and more of a future for families.' },
-  { name: 'Understanding our bodies', title: 'A clearer picture.', paragraph: 6, image: '', alt: '', caption: 'Explanatory diagram · not a scan or product rendering', today: 'An ultrasound-based scanner under development for wellness.', possibility: 'An easier way to observe and understand changes in our bodies.' },
-  { name: 'Beyond Earth', title: 'A wider horizon.', paragraph: 7, image: '/images/orbital-horizon.webp', alt: 'Imagined spacecraft above the curved horizon of Earth', caption: 'Imagined spaceflight · not a documented mission', today: 'Satellite connectivity is in use; full, rapid reuse remains a development goal.', possibility: 'More people able to connect, explore, and send ideas beyond Earth.' },
+export const boundaries = [
+  { boundary: 'Distance', name: 'Mobility', title: 'More independence.', paragraph: 4, image: '/images/freedom-ride.webp', alt: 'Imagined passenger watching the coast from an autonomous vehicle', caption: 'Imagined scene · not a depiction of Zoox or Cybercab · AI-generated artwork', today: 'Driverless rides operate in limited service areas.', possibility: 'More independence, and attention freed during a journey.' },
+  { boundary: 'Disease', name: 'Medicine', title: 'More time together.', paragraph: 5, image: '/images/molecules.webp', alt: 'Conceptual molecular structures, not a medical image', caption: 'Conceptual biology · not a medical image · AI-generated artwork', today: 'Personalized therapeutic cancer vaccines are being tested.', possibility: 'Treatments tailored to a tumor, and more of a future for families.' },
+  { boundary: 'Skin', name: 'Understanding our bodies', title: 'A clearer picture.', paragraph: 6, image: '', alt: '', caption: 'Explanatory diagram · not a scan or product rendering', today: 'An ultrasound-based scanner under development for wellness.', possibility: 'An easier way to observe and understand changes in our bodies.' },
+  { boundary: 'Gravity', name: 'Beyond Earth', title: 'A wider horizon.', paragraph: 7, image: '/images/orbital-horizon.webp', alt: 'Imagined spacecraft above the curved horizon of Earth', caption: 'Imagined spaceflight · not a documented mission · AI-generated artwork', today: 'Satellite connectivity is in use; full, rapid reuse remains a development goal.', possibility: 'More people able to connect, explore, and send ideas beyond Earth.' },
 ];
 
 export const questions = [
-  { title: 'Work & income', paragraph: 9 },
-  { title: 'Access & abundance', paragraph: 10 },
-  { title: 'Deepfakes & trust', paragraph: 11 },
+  { sign: 'What happens to people whose jobs disappear?', answer: 'Universal high income', paragraph: 9 },
+  { sign: 'Who gets access to the wealth these technologies create?', answer: 'Abundance', paragraph: 10 },
+  { sign: 'How do we trust what we see, or the systems we increasingly depend on?', answer: 'Better verification', paragraph: 11 },
+];
+
+export const chapters = [
+  { id: 'outside', label: 'Outside' },
+  { id: 'inside', label: 'Inside' },
+  { id: 'boundaries', label: 'Boundaries' },
+  { id: 'questions', label: 'Questions' },
+  { id: 'mirror', label: 'The mirror' },
 ];
