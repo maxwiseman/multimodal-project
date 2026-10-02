@@ -1,69 +1,28 @@
-import Image from "next/image";
+import Image from 'next/image';
+import { Possibilities, HardQuestions, TrustExplorer, SourceLibrary } from './components/explorers';
+import { EssayParagraph } from './components/prose';
+import { Arrow } from './components/icons';
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <>
+    <a href="#main" className="skip-link">Skip to content</a>
+    <header className="site-header shell"><a href="#main" className="wordmark">The Possible<span className="brand-dot" /></a><nav aria-label="Main navigation"><a href="#story">The story</a><a href="#possibilities">Possibilities</a><a href="#questions">The hard questions</a><a href="#sources">Sources</a></nav></header>
+    <main id="main">
+      <section className="hero shell" aria-labelledby="hero-title">
+        <div className="hero-content"><h1 id="hero-title">What could we<br /><em>create?</em></h1><p className="hero-deck">A future with more freedom to create, explore, and do work we find meaningful.</p><a className="text-link hero-link" href="#story">Start with the story<Arrow /></a></div>
+        <figure className="hero-art"><Image src="/images/open-door.webp" alt="An imagined open doorway leading from a dark room toward a sunlit ocean" width={1400} height={1050} priority sizes="(max-width: 760px) 100vw, 47vw" /><figcaption>An imagined future · AI-generated artwork</figcaption></figure>
+      </section>
+      <nav className="chapter-index shell" aria-label="Essay chapters">{[['01','Two visions','#story'],['02','More freedom','#possibilities'],['03','A question of trust','#questions']].map(([n,title,href])=><a key={n} href={href}><span className="eyeline">{n}</span><span>{title}<Arrow /></span></a>)}</nav>
+      <section id="story" className="story section shell">
+        <div className="section-intro"><p className="eyeline">01 / The story</p><h2>Two visions.<br /><em>One doorway.</em></h2><p className="margin-note">A personal account from OpenAI’s DevDay in San Francisco.</p></div>
+        <div className="prose"><EssayParagraph index={0} className="drop-cap" /><EssayParagraph index={1} /></div>
+      </section>
+      <section id="freedom" className="freedom shell" aria-labelledby="freedom-title"><div className="freedom-statement"><p className="eyeline">What excites me</p><h2 id="freedom-title">More control<br />over <em>our time.</em></h2></div><div className="prose"><EssayParagraph index={2} /></div></section>
+      <section id="possibilities" className="section shell possibilities"><div className="section-heading"><div><p className="eyeline">02 / Possibilities</p><h2>What happens when<br /><em>the boundaries move?</em></h2></div><EssayParagraph index={3} /></div><Possibilities /></section>
+      <section id="questions" className="section shell responsibility"><div className="section-intro"><p className="eyeline">03 / The hard questions</p><h2>A possible future.<br /><em>A difficult transition.</em></h2><div className="prose"><EssayParagraph index={8} /></div></div><HardQuestions /></section>
+      <section id="alignment" className="alignment section" aria-labelledby="alignment-title"><div className="shell"><p className="eyeline">The question I find hardest</p><h2 id="alignment-title">More trustworthy—or<br /><em>better at appearing trustworthy?</em></h2><div className="alignment-body"><div className="prose"><EssayParagraph index={12} /><EssayParagraph index={13} /><EssayParagraph index={14} /></div><TrustExplorer /></div><div className="closing"><EssayParagraph index={15} /></div></div></section>
+      <section id="sources" className="section shell sources"><div className="sources-heading"><h2>Follow the <em>sources.</em></h2><p>Research and reporting behind the examples. Company sources describe their own work; the proposals and hopes in this essay are my perspective.</p></div><SourceLibrary /></section>
+    </main>
+    <footer className="site-footer shell"><a href="#main" className="wordmark">The Possible<span className="brand-dot" /></a><p>A personal essay on technology, freedom, and responsibility.<br />ENGL 101 · Concept artwork generated with AI.</p><a href="#main" className="text-link">Back to top<Arrow /></a></footer>
+  </>;
 }
